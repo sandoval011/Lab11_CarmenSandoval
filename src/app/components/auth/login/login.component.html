@@ -13,12 +13,14 @@
             </div>
             <div class="form-group">
                 <label for="password">
-                    <i class="bi bi-lock "></i>
+                    <i class="bi bi-lock"></i>
                 </label>
                 <input id="password" type="password" formControlName="password" placeholder="Ingrese su contraseña">
             </div>
             <button type="submit" [disabled]="!loginForm.valid">Iniciar sesión</button>
         </form>
+        <div *ngIf="submitted" class="confirmation-message">
+            ¡Los datos se enviaron correctamente!
+        </div>
     </div>
 </div>
-

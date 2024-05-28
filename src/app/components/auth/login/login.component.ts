@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
-
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,CommonModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
@@ -14,6 +14,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from "@angula
 
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
+  submitted = false;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -30,6 +31,13 @@ export class LoginComponent implements OnInit {
       console.log('Formulario enviado');
       console.log('Usuario:', username);
       console.log('Contraseña:', password);
+
+      this.submitted = true;
+
+      this.loginForm.reset();
+      setTimeout(() => {
+        this.submitted = false;
+      }, 2000); 
     }
   }
 }

@@ -50,5 +50,8 @@
 
       <button mat-raised-button color="primary" class="submit-button" type="submit" [disabled]="!formsComponent.valid">Guardar Receta</button>
     </form>
+    <div *ngIf="submitted" class="confirmation-message">
+      ¡Los datos se enviaron correctamente!
+  </div>
   </div>
 </div>

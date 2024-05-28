@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-forms',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.css'
 })
 export class FormsComponent implements OnInit{
   
   formsComponent!: FormGroup;
-
+  submitted = false;
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
@@ -34,6 +35,13 @@ export class FormsComponent implements OnInit{
       console.log('Descripción:', description);
       console.log('Ingredientes:', ingredients);
       console.log('Pasos de preparación:', preparationSteps);
+    
+      this.submitted = true;
+
+      this.formsComponent.reset();
+      setTimeout(() => {
+        this.submitted = false;
+      }, 2000); 
     }
   }
 }

@@ -37,5 +37,8 @@
             </div>
             <button type="submit" [disabled]="!registerForm.valid">Registrarse</button>
         </form>
+        <div *ngIf="submitted" class="confirmation-message">
+            ¡Los datos se enviaron correctamente!
+        </div>
     </div>
 </div>

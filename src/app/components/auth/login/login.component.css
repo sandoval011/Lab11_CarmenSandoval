@@ -8,6 +8,11 @@ body, html {
     animation: fadeInBackground 1s ease-in-out;
 }
 
+.confirmation-message {
+    color: rgb(7, 67, 7);
+    font-size: 1em;
+    margin-top: 10px;
+}
 
 
 .container {
