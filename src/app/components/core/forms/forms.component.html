@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="card">
+    <div class="icon">
+      <i class="bi bi-journal-text"></i>
+    </div>
+    <h2 class="title">Receta de Restaurante</h2>
+    <form [formGroup]="formsComponent" (ngSubmit)="onSubmit()" class="recipe-form">
+  
+      <div class="form-group">
+        <label for="recipeName">
+          <i class="bi bi-card-text"></i>
+        </label>
+        <input id="recipeName" type="text" formControlName="recipeName" placeholder="Ingrese el nombre de la receta" matInput>
+      </div>
+      
+      <div class="form-group">
+        <label for="numberOfPeople">
+          <i class="bi bi-people"></i>
+        </label>
+        <input id="numberOfPeople" type="number" formControlName="numberOfPeople" placeholder="Ingrese el número de personas" min="1" matInput>
+      </div>
+
+      <div class="form-group">
+        <label for="publicationDate">
+          <i class="bi bi-calendar"></i>
+        </label>
+        <input id="publicationDate" type="date" formControlName="publicationDate" placeholder="Seleccione la fecha de publicación" matInput>
+      </div>
+
+      <div class="form-group">
+        <label for="description">
+          <i class="bi bi-pencil-square"></i>
+        </label>
+        <textarea id="description" formControlName="description" rows="4" placeholder="Ingrese una descripción de la receta" matInput></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="ingredients">
+          <i class="bi bi-list-check"></i>
+        </label>
+        <textarea id="ingredients" formControlName="ingredients" rows="4" placeholder="Ingrese los ingredientes de la receta" matInput></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="preparationSteps">
+          <i class="bi bi-clipboard-check"></i>
+        </label>
+        <textarea id="preparationSteps" formControlName="preparationSteps" rows="4" placeholder="Ingrese los pasos de preparación de la receta" matInput></textarea>
+      </div>
+
+      <button mat-raised-button color="primary" class="submit-button" type="submit" [disabled]="!formsComponent.valid">Guardar Receta</button>
+    </form>
+  </div>
+</div>
